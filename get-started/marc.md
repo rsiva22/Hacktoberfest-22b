@@ -1,3 +1,3 @@
 # Hello World
 
-Marc is ready to start hacking :sunglasses:
+Marc is ready to start hacking :sunglasses::sun:
