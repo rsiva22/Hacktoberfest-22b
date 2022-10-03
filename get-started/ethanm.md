@@ -1,3 +1,3 @@
 ## Hello World
 
-Ethan McElree is ready to start hacking.
+Ethan M is ready to start hacking.
