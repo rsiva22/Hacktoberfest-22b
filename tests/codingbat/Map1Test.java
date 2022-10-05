@@ -28,13 +28,4 @@ class Map1Test {
 
     }
 
-    @Test
-    void marc_topping3() {
-        Map<String, String> map1 = new HashMap<>();
-        map1.put("potato", "cat");
-        map1.put("salad", "dog");
-        Map<String, String> map2 = Map1.topping3(map1);
-        assertEquals("cat", map2.get("fries"));
-        assertEquals("dog", map2.get("spinach"));
-    }
 }
