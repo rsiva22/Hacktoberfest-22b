@@ -4,6 +4,8 @@ import codingbat.Map2;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,6 +17,17 @@ class Map2Test {
         String[] result = Map2.allSwap(strings);
         String[] expected = {"caterpillar", "dog", "butterfly", "cat", "kitten", "kangaroo", "bunny", "centipede", "crocodile"};
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    }
+
+    @Test
+    void chris_wordMultiple(){
+        Map<String, Boolean> map = new HashMap<String, Boolean>();
+        String[] strings = {"a", "b", "c", "z", "b", "a", "h"};
+        map = Map2.wordMultiple(strings);
+        assertEquals(true, map.get("a"));
+        assertEquals(false, map.get("z"));
+        assertEquals(false, map.get("h"));
+        assertNotEquals(true,map.get("c"));
     }
 
 }
