@@ -41,7 +41,7 @@ class Map1Test {
         map3.put("a", "Asdf");
         map3.put("b", "Asdf");
         Map<String, String> map4 = Map1.mapAB(map3);
-        map4.put("ab", "AsdfAasdf");
+        map4.put("ab", "AsdfAsdf");
         assertEquals(map4, map3);
 
     }
