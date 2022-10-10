@@ -28,4 +28,24 @@ class Map1Test {
 
     }
 
+    @Test
+    void april_mapAB(){
+        Map<String, String> map1 = new HashMap<>();
+        map1.put ("a" , "a");
+        map1.put ("b" , "b");
+        Map<String, String> map2 = Map1.mapAB(map1);
+        assertTrue(map2.containsKey("ab"));
+        assertTrue(map2.containsKey("a"));
+        assertTrue(map2.containsKey("b"));
+        assertFalse(map2.containsKey("c"));
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put ("a", "a");
+        map3.put ("c", "c");
+        Map<String, String> map4 = Map1.mapAB(map3);
+        assertTrue(map4.containsKey("a"));
+        assertTrue(map4.containsKey("c"));
+        assertFalse(map4.containsKey("ab"));
+    }
+
 }
