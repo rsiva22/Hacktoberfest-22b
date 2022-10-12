@@ -4,6 +4,7 @@ import codingbat.Map2;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,4 +18,12 @@ class Map2Test {
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
 
+    @Test
+    void teft_wordLen() {
+        String[] strings1 = {"one", "two", "one", "three", "two", "one"};
+        Map<String, Integer> methodmap = Map2.wordLen(strings1);
+        assertEquals(3, methodmap.get("one"));
+        assertEquals(3, methodmap.get("two"));
+        assertEquals(5, methodmap.get("three"));
+    }
 }
