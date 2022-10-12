@@ -28,4 +28,27 @@ class Map1Test {
 
     }
 
+    @Test
+    void ethank_topping2(){
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "cat");
+        map1.put("b", "cat");
+
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("a", "cat");
+        map2.put("b", "cat");
+        Map1.topping2(map1);
+        assertEquals(map1, map2);
+
+
+        map1.put("ice cream", "");
+        assertFalse(map1.containsKey("yogurt"));
+        Map1.topping2(map1);
+        assertFalse(map1.containsKey("yogurt"));
+
+        map1.put("ice cream", "42");
+        Map1.topping2(map1);
+        assertTrue(map1.containsKey("yogurt"));
+    }
+
 }
