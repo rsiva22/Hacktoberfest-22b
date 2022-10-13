@@ -1,6 +1,6 @@
 package codingbat;
 
-import codingbat.Map2;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -25,5 +25,11 @@ class Map2Test {
         assertEquals(3, methodmap.get("one"));
         assertEquals(3, methodmap.get("two"));
         assertEquals(5, methodmap.get("three"));
+
+        String[] strings2 = {"a", "two", "a", "two", "be", "be"};
+        Map<String, Integer> methodmap2 = Map2.wordLen(strings2);
+        assertEquals(1, methodmap2.get("a"));
+        assertEquals(3, methodmap2.get("two"));
+        assertEquals(2, methodmap2.get("be"));
     }
 }
