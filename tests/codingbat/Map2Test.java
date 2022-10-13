@@ -9,7 +9,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Map2Test {
-    
+
     @Test
     void marc_allSwap() {
         String[] strings = {"cat", "dog", "bunny", "caterpillar", "kangaroo", "kitten", "butterfly", "crocodile", "centipede"};
@@ -18,6 +18,7 @@ class Map2Test {
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
 
+    // Test for wordLen()
     @Test
     void teft_wordLen() {
         String[] strings1 = {"one", "two", "one", "three", "two", "one"};

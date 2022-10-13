@@ -1,6 +1,6 @@
 package codingbat;
 
-import codingbat.Map1;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -27,31 +27,33 @@ class Map1Test {
         assertTrue(map4.containsKey("b"));
 
     }
+
+    // Test for mapAB4()
     @Test
     void teft_mapAB4() {
         Map<String, String> testmap = new HashMap<>();
         testmap.put("a", "longer");
         testmap.put("b", "short");
         Map<String, String> methodmap = Map1.mapAB4(testmap);
-        assertTrue(testmap.containsKey("c"));
-        assertTrue(testmap.get("c").equals("longer"));
-        assertTrue(testmap.get("c").equals(testmap.get("a")));
+        assertTrue(methodmap.containsKey("c"));
+        assertEquals("longer", methodmap.get("c"));
+        assertEquals(methodmap.get("c"), (methodmap.get("a")));
 
         Map<String, String> testmap2 = new HashMap<>();
         testmap2.put("a", "short");
         testmap2.put("b", "longer");
         Map<String, String> methodmap2 = Map1.mapAB4(testmap2);
-        assertTrue(testmap2.containsKey("c"));
-        assertTrue(testmap2.get("c").equals("longer"));
-        assertTrue(testmap2.get("c").equals(testmap2.get("b")));
+        assertTrue(methodmap2.containsKey("c"));
+        assertEquals("longer", methodmap2.get("c"));
+        assertEquals(methodmap2.get("c"), (methodmap2.get("b")));
 
         Map<String, String> testmap3 = new HashMap<>();
         testmap3.put("a", "same");
         testmap3.put("b", "same");
         Map<String, String> methodmap3 = Map1.mapAB4(testmap3);
-        assertTrue(!testmap3.containsKey("c"));
-        assertTrue(testmap3.get("a").equals(""));
-        assertTrue(testmap3.get("b").equals(""));
+        assertFalse(methodmap3.containsKey("c"));
+        assertEquals("", methodmap3.get("a"));
+        assertEquals("", methodmap3.get("b"));
     }
 
 }
