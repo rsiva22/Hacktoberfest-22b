@@ -22,7 +22,6 @@ class Map2Test {
         String[] words = {"apple", "bee", "caramel", "dark", "bee", "elephant", "apple", "dark", "fog"};
         Map<String, Integer> result = Map2.wordCount(words);
         String[] expected = {"apple=2", "bee=2", "caramel=1", "dark=2", "elephant=1", "fog=1"};
-        assertEquals(Arrays.toString(expected), result);
+        assertEquals(Arrays.toString(expected), result.toString().replaceAll("[{]", "[").replaceAll("[}]", "]"));
     }
-
 }
