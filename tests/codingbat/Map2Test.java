@@ -17,4 +17,14 @@ class Map2Test {
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
 
+    @Test
+    void marwa_fistSwap() {
+      // firstSwap(["ab", "ac"]) → ["ac", "ab"]
+        String[] strings = {"ab", "ac"};
+        String[] result = Map2.firstSwap(strings);
+        String[] expected = {"ac", "ab"};
+        assertEquals(Arrays.toString(expected), Arrays.toString(result));
+        assertTrue(Arrays.toString(expected).equals( Arrays.toString(result)));
+
+    }
 }
