@@ -23,5 +23,6 @@ public class SmileFaces {
             }
         }
         return count;
+
     }
 }

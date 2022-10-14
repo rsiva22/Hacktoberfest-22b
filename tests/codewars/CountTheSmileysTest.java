@@ -19,5 +19,6 @@ class CountTheSmileysTest {
         list.add(":o");
         list.add(";0");
         assertEquals(2, SmileFaces.countSmileys(list));
+
     }
 }
