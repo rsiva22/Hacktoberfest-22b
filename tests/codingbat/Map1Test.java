@@ -28,4 +28,22 @@ class Map1Test {
 
     }
 
+    @Test
+    void william_mapBully() {
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "f");
+        map1.put("b", "c");
+        Map<String, String> map2 = Map1.mapBully(map1);
+        assertTrue(map2.containsValue(""));
+        assertFalse(map2.containsValue("c"));
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("a", "f");
+        map3.put("b", "c");
+        Map<String, String> map4 = Map1.mapBully(map3);
+        assertEquals(map4.containsValue(""), map4.containsKey("a"));
+        assertEquals(map4.containsValue("f"), map4.containsKey("b"));
+
+    }
+
 }
