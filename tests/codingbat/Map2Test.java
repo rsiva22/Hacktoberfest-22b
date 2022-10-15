@@ -4,6 +4,7 @@ import codingbat.Map2;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,4 +18,12 @@ class Map2Test {
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
 
+    @Test
+    void gwen_pairs() {
+        String[] namesWithLastInitial = {"GwenA", "StephenJ", "JaymesV"};
+        Map<String, String> initials = Map2.pairs(namesWithLastInitial);
+        assertEquals("A", initials.get("G"));
+        assertEquals("J", initials.get("S"));
+        assertEquals("V", initials.get("J"));
+    }
 }
