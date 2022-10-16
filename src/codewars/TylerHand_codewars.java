@@ -3,7 +3,7 @@ package codewars;
 public class TylerHand_codewars {
     //https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html
     // This is how I learned how to use the StringBuilder class
-    // tylerhand
+    // tyler hand
     static String toCamelCase(String s){
         String camelCase = "";
         String[] words = s.split("[^a-zA-Z0-9]");
