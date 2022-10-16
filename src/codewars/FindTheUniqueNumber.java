@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
+//https://www.codewars.com/kata/585d7d5adb20cf33cb000235
 public class FindTheUniqueNumber {
         public static double findUniq(double arr[]) {
 
