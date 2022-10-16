@@ -27,5 +27,26 @@ class Map1Test {
         assertTrue(map4.containsKey("b"));
 
     }
+    @Test
+    void zaid_topping1(){
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("ice cream", "");
+        map1.put("bread", "");
+        Map<String, String> map2 = Map1.topping1(map1);
+        assertTrue(map2.get("ice cream").equals("cherry"));
+        assertTrue(map2.get("bread").equals("butter"));
+        assertEquals("butter", map2.get("bread"));
+        assertEquals("cherry", map2.get("ice cream"));
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("ice cream", "");
+        map3.put("bread", "");
+        Map<String, String> map4 = Map1.topping1(map3);
+        assertFalse(map4.get("ice cream").equals(""));
+        assertFalse(map4.get("bread").equals(""));
+
+
+    }
+
 
 }
