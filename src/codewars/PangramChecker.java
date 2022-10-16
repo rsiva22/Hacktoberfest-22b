@@ -18,4 +18,3 @@ public class PangramChecker {
             } return true;
         }
     }
-
