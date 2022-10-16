@@ -4,11 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FindTheUniqueNumberTest {
-
-}
-
-    class FindUniqTest {
+    class FindTheUniqueNumberTest {
         private double precision = 0.0000000000001;
 
         @Test
