@@ -26,6 +26,5 @@ class Map2Test {
         assertEquals(result, "{apple=0}");
     }
 
-
 }
 

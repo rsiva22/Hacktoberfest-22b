@@ -46,7 +46,5 @@ class Map1Test {
     }
 
 
-
-
 }
 
