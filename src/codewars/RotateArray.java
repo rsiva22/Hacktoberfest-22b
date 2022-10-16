@@ -2,10 +2,13 @@ package codewars;
 
 public class RotateArray {
 
-    public static void main(String[] args) {
-
-    }
-
+    /**
+     * @link https://www.codewars.com/kata/5469e0798a3502f4a90005c9/train/java
+     * @author Matthew Meppelink
+     * @param data object to be roated
+     * @param n the number of times to rotate 
+     * @return the rotated object.
+     */
     public Object[] rotate(Object[] data, int n) {
         if (n > 0) {
             for (int i = 0, j; i < n; i++) {
