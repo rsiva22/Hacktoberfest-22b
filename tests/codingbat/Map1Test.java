@@ -28,4 +28,24 @@ class Map1Test {
 
     }
 
+    @Test
+    void tylerH_mapShare() {
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "aaa");
+        map1.put("b", "bbb");
+        map1.put("c", "ccc");
+        Map<String, String> map2 = Map1.mapShareTylerHandMap1(map1);
+        assertTrue(map2.containsKey("a"));
+        assertTrue(map2.containsKey("b"));
+        assertFalse(map2.containsKey("c"));
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("b", "xyz");
+        map3.put("c", "ccc");
+        Map<String, String> map4 = Map1.mapShareTylerHandMap1(map3);
+        assertTrue(map4.containsKey("b"));
+        assertFalse(map4.containsKey("c"));
+
+    }
+
 }

@@ -16,5 +16,15 @@ class Map2Test {
         String[] expected = {"caterpillar", "dog", "butterfly", "cat", "kitten", "kangaroo", "bunny", "centipede", "crocodile"};
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
+    @Test
+    void tylerH_wordLen() {
+        String[] strings = {"a", "bb", "a", "bb"};
+        Map2.wordLen(strings);
+        assertEquals(2, Map2.wordLenTylerHand(strings).get("bb"));
+        assertEquals(1, Map2.wordLenTylerHand(strings).get("a"));
+        assertTrue(Map2.wordLenTylerHand(strings).containsKey("bb"));
+        assertTrue(Map2.wordLenTylerHand(strings).containsKey("a"));
+
+    }
 
 }
