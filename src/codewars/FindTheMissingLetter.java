@@ -29,7 +29,4 @@ public class FindTheMissingLetter {
         return missingLetter;
     }
 
-    public static void main(String[] args) {
-        System.out.println(FindTheMissingLetter.findMissingLetter(new char[] { 'a','b','c','d','f' }));
-    }
 }
