@@ -41,7 +41,7 @@ class Map1Test {
         map1.put("a", "screamFest");
         map1=mapBully(map1);
         assertTrue(map1.containsKey("b"));
-        assertFalse("candy",map1.get("b"));
+        assertFalse(Boolean.parseBoolean("candy"),map1.get("b"));
 
     }
 

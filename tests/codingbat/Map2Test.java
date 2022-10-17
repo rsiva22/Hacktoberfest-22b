@@ -4,10 +4,13 @@ import codingbat.Map2;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import static codingbat.Map1.mapBully;
 import static codingbat.Map2.wordCount;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class Map2Test {
     
@@ -30,7 +33,8 @@ class Map2Test {
         assertEquals(2,map.get("a"));
         assertEquals(2,map.get("b"));
         assertEquals(1,map.get("c"));
-        assertFalse(2,map.get("c"));
+        assertFalse(map.containsKey("d"));
+
     }
 
 }
