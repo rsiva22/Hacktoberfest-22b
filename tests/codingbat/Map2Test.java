@@ -18,6 +18,14 @@ class Map2Test {
         String[] expected = {"caterpillar", "dog", "butterfly", "cat", "kitten", "kangaroo", "bunny", "centipede", "crocodile"};
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
+    
+    @Test
+    void mohmeed_firstSwap() {
+        String[] strings = {"ab", "ac"};
+        String[] result = Map2.firstSwap(strings);
+        String[] expected = {"ac", "ab"};
+        assertEquals(Arrays.toString(expected), Arrays.toString(result));
+    }
 
     @Test
     void marwa_fistSwap() {
@@ -25,7 +33,6 @@ class Map2Test {
         String[] strings = {"ab", "ac"};
         String[] result = Map2.firstSwap(strings);
         String[] expected = {"ac", "ab"};
-        assertEquals(Arrays.toString(expected), Arrays.toString(result));
         assertTrue(Arrays.toString(expected).equals( Arrays.toString(result)));
 
     }

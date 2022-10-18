@@ -28,6 +28,16 @@ class Map1Test {
 
     }
 
+    @Test
+    void mohmeed_topping1() {
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("ice cream", "cherry");
+        map1.put("bread", "butter");
+        Map<String, String> map2 = Map1.topping1(map1);
+        assertTrue(map2.containsValue("cherry"));
+        assertTrue(map2.containsValue("butter"));
+    }
+
 
     @Test
     void marwa_mapShare() {
