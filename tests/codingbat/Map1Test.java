@@ -29,6 +29,26 @@ class Map1Test {
     }
 
 
+    @Test
+    void marwa_mapShare() {
+        // mapShare({"a": "aaa", "b": "bbb", "c": "ccc"}) → {"a": "aaa", "b": "aaa"}
+
+
+
+
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "aaa");
+        map1.put("b", "bbb");
+        map1.put("c","ccc");
+        Map<String, String> expected = new HashMap<>();
+        expected.put("a","aaa");
+        expected.put("b","aaa");
+        Map<String, String> result = Map1.mapShare(map1);
+        assertEquals(expected,result);
+        assertTrue(expected.equals(result));
+
+    }
+
     // Test for mapAB4()
     @Test
     void teft_mapAB4() {
