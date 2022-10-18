@@ -4,6 +4,7 @@ package codingbat;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,6 +18,7 @@ class Map2Test {
         String[] expected = {"caterpillar", "dog", "butterfly", "cat", "kitten", "kangaroo", "bunny", "centipede", "crocodile"};
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
+
 
     // Test for wordLen()
     @Test
@@ -33,4 +35,13 @@ class Map2Test {
         assertEquals(3, methodmap2.get("two"));
         assertEquals(2, methodmap2.get("be"));
     }
+
+    @Test
+    void alex_word0() {
+        String[] strings = {"apple"};
+        String result = Map2.word0(strings).toString();
+        assertEquals(result, "{apple=0}");
+    }
+
 }
+
