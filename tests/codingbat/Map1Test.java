@@ -28,8 +28,28 @@ class Map1Test {
 
     }
 
+
+    @Test
+    void matthew_mapAB() {
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "Hello");
+        map1.put("b", "Hi");
+        Map<String, String> map2 = Map1.mapAB(map1);
+        assertTrue(map2.containsKey("ab"));
+        assertTrue(map2.containsValue("HelloHi"));
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("a", "Asdf");
+        map3.put("b", "Asdf");
+        Map<String, String> map4 = Map1.mapAB(map3);
+        map4.put("ab", "AsdfAsdf");
+        assertEquals(map4, map3);
+
+    }
+
+
    @Test
-    void abdalgader_mapAB4(){
+   void abdalgader_mapAB4(){
         //mapAB4({"a": "aaa"}) → {"a": "aaa"}
         Map<String, String> map1 = new HashMap<>();
         map1.put("a", "aaa");
@@ -80,7 +100,7 @@ class Map1Test {
     }
 
 
-
+    @Test
     void mohmeed_topping1() {
         Map<String, String> map1 = new HashMap<>();
         map1.put("ice cream", "cherry");

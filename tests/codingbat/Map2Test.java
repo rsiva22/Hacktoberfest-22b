@@ -102,4 +102,24 @@ class Map2Test {
         assertFalse(result3.equals(expected3));
     }
 
+
+    @Test
+    void matthew_word0() {
+        String[] strings = {"a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"};
+        Map<String, Integer> result = Map2.word0(strings);
+        Map<String, Integer> expected = new HashMap<>();
+        expected.put("a", 0);
+        assertEquals(expected, result);
+
+        String[] strings1 = {"2", "5", "1"};
+        Map<String, Integer> result2 = Map2.word0(strings);
+        Map<String, Integer> expected2 = new HashMap<>();
+        expected2.put("2", 0);
+        expected2.put("5", 0);
+        expected2.put("1", 0);
+        assertTrue(expected2.containsKey("2"));
+        assertTrue(expected2.containsKey("5"));
+        assertTrue(expected2.containsKey("1"));
+        assertTrue(expected2.containsValue(0));
+    }
 }
