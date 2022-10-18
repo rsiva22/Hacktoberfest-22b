@@ -4,9 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class OurLinkedListTest {
+
+class OurLinkedListTest {
+
     @Test
-    void add(){
+    void add() {
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("pizza");
         list.add("chicken wings");
@@ -14,5 +16,9 @@ public class OurLinkedListTest {
         assertEquals("pizza", list.get(0));
         assertEquals("chicken wings", list.get(1));
         assertEquals("french fries", list.get(2));
+    }
+
+    @Test
+    void testAdd() {
     }
 }
