@@ -28,4 +28,23 @@ class Map1Test {
 
     }
 
+    @Test
+    void alex_mapAB() {
+    Map<String, String> map1 = new HashMap<>();
+    map1.put("a", "apple");
+    map1.put("b", "oranges");
+    Map<String, String> map2 = Map1.mapAB(map1);
+    assertFalse(map2.isEmpty());
+
+    Map<String, String> map3 = new HashMap<>();
+    map3.put("a", "apple");
+    map3.put("b", "oranges");
+    Map<String, String> map4 = Map1.mapAB(map3);
+    assertTrue(map4.containsKey("ab"));
+
+
+    }
+
+
 }
+
