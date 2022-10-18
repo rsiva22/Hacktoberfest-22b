@@ -22,6 +22,21 @@ class Map2Test {
 
 
     @Test
+    void ethank_firstchar(){
+        Map <String,String> map3 = new HashMap<>();
+        map3.put("r","red2red");
+        map3.put("b","blue2blue");
+        map3.put("g","green");
+        map3.put("y","yellow");
+
+        String[] map2 = {"red2", "green","blue2","yellow","red","blue"};
+
+        System.out.println( Map2.firstChar(map2));
+        assertEquals(map3,Map2.firstChar(map2));
+    }
+
+
+    @Test
     void ethanm_wordLen(){
         Map<String, Integer> result1 = new HashMap<>();
         result1.put("bb", 2);
