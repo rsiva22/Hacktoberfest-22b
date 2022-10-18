@@ -60,4 +60,25 @@ class Map2Test {
         assertEquals(result, "{apple=0}");
     }
 
+    @Test
+    void hoang_wordCount() {
+        String[] strings = {"cat", "dog", "cat", "fish", "rabbit", "rabbit", "rabbit", "bird"};
+        Map<String, Integer> map = Map2.wordCount(strings);
+        Map<String, Integer> expected = new HashMap<>();
+        expected.put("cat", 2);
+        expected.put("dog", 1);
+        expected.put("fish", 1);
+        expected.put("rabbit", 3);
+        expected.put("bird", 1);
+        assertTrue(expected.equals(map));
+
+        Map<String, Integer> map2 = Map2.wordCount(strings);
+        Map<String, Integer> expected2 = new HashMap<>();
+        expected2.put("cat", 2);
+        expected2.put("dog", 1);
+        expected2.put("fish", 1);
+        expected2.put("rabbit", 7);
+        assertFalse(expected2.equals(map2));
+    }
+
 }
