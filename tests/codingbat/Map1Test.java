@@ -28,6 +28,41 @@ class Map1Test {
 
     }
 
+   @Test
+    void abdalgader_mapAB4(){
+        //mapAB4({"a": "aaa"}) → {"a": "aaa"}
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "aaa");
+        Map<String, String> expected1 = new HashMap<>();
+        expected1.put("a", "aaa");
+        assertEquals(Map1.mapAB4(map1),expected1);
+
+        //mapAB4({"a": "a", "b": "b", "c": "cake"}) → {"a": "", "b": "", "c": "cake"}
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("a", "a");
+        map2.put("b", "b");
+        map2.put("c", "cake");
+        Map<String, String> expected2 = new HashMap<>();
+        expected2.put("a", "");
+        expected2.put("b", "");
+        expected2.put("c", "cake");
+        assertTrue(Map1.mapAB4(map2).equals(expected2));
+
+
+        //mapAB4({"a": "a", "b": "b", "c": "cake"}) → {"a": "", "b": "", "c": "cake"}
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("a", "a");
+        map3.put("b", "b");
+        map3.put("c", "cake");
+        Map<String, String> expected3 = new HashMap<>();
+        expected3.put("a", "");
+        //expected3.put("b", "");
+        expected3.put("c", "cake");
+        assertFalse(Map1.mapAB4(map3).equals(expected3));
+    }
+
+
+
     @Test
     void hoang_mapAB() {
         Map<String, String> map1 = new HashMap<>();

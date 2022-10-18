@@ -81,4 +81,25 @@ class Map2Test {
         assertFalse(expected2.equals(map2));
     }
 
+
+    @Test
+    void abdalgader_wordAppend() {
+        //wordAppend(["a", "b", "a"]) → "a"
+        String[] strings1 = {"a", "b", "a"};
+        String result1 = Map2.wordAppend(strings1);
+        String expected1 = "a";
+        assertEquals(result1,expected1);
+    //wordAppend(["a", "b", "b", "a", "a"]) → "ba"
+
+        String[] strings2 = {"a", "b", "b", "a", "a"};
+        String result2 = Map2.wordAppend(strings2);
+        String expected2 = "ba";
+        assertTrue(result2.equals(expected2));
+
+        String[] strings3 = {"a", "b", "b", "a", "a"};
+        String result3 = Map2.wordAppend(strings3);
+        String expected3 = "b";
+        assertFalse(result3.equals(expected3));
+    }
+
 }
