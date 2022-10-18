@@ -30,6 +30,23 @@ class Map1Test {
 
 
     @Test
+    void chris_topping1(){
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("ice cream", "peanuts");
+        Map<String, String> map4 = Map1.topping1(map3);
+        assertTrue(map4.containsKey("bread"));
+        assertEquals(map4.get("ice cream"), "cherry");
+
+
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("ice cream", "peanuts");
+        map1.put("b", "cat");
+        Map<String, String> map2 = Map1.topping1(map1);
+        assertNotEquals(map2.get("icecream"), "peanuts");
+    }
+
+
+    @Test
     void matthew_mapAB() {
         Map<String, String> map1 = new HashMap<>();
         map1.put("a", "Hello");

@@ -104,6 +104,18 @@ class Map2Test {
 
 
     @Test
+    void chris_wordMultiple(){
+        Map<String, Boolean> map = new HashMap<String, Boolean>();
+        String[] strings = {"a", "b", "c", "z", "b", "a", "h"};
+        map = Map2.wordMultiple(strings);
+        assertEquals(true, map.get("a"));
+        assertEquals(false, map.get("z"));
+        assertEquals(false, map.get("h"));
+        assertNotEquals(true,map.get("c"));
+    }
+
+
+    @Test
     void matthew_word0() {
         String[] strings = {"a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"};
         Map<String, Integer> result = Map2.word0(strings);
