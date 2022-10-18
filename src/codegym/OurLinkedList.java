@@ -17,6 +17,7 @@ public class OurLinkedList<T> {
         }
     }
 
+
     public void add(int index, T value) {
         Node node = new Node();
         node.value = value;
@@ -40,6 +41,7 @@ public class OurLinkedList<T> {
         }
         return (T) currentElement.value;
     }
+
 
     public void add(T value) {
         Node node = new Node();

@@ -1,8 +1,6 @@
 package codingbat;
 
-
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +18,13 @@ class Map2Test {
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
 
+    @Test
+    void april_wordCount(){
+        String[] words = {"apple", "bee", "caramel", "dark", "bee", "elephant", "apple", "dark", "fog"};
+        Map<String, Integer> result = Map2.wordCount(words);
+        String[] expected = {"apple=2", "bee=2", "caramel=1", "dark=2", "elephant=1", "fog=1"};
+        assertEquals(Arrays.toString(expected), result.toString().replaceAll("[{]", "[").replaceAll("[}]", "]"));
+    }
 
     @Test
     void ethank_firstchar(){
