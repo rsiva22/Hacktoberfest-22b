@@ -27,5 +27,16 @@ class Map1Test {
         assertTrue(map4.containsKey("b"));
 
     }
+    @Test
+    void tylerb_mapAB3False(){
+        Map<String, String> stuff = new HashMap<>();
+
+        stuff.put("a", "test");
+        stuff.put("a", "test");
+        stuff.put("b", "something");
+        Map<String, String> result = Map1.mapAB3(stuff);
+        String wrong = "{a=test,a=test, b=something}";
+        assertNotEquals(result.toString(), wrong);
+    }
 
 }
