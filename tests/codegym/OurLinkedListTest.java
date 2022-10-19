@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 class OurLinkedListTest {
 
     @Test
@@ -15,7 +16,6 @@ class OurLinkedListTest {
         assertEquals("pizza", list.get(0));
         assertEquals("chicken wings", list.get(1));
         assertEquals("french fries", list.get(2));
-
     }
 
     @Test
