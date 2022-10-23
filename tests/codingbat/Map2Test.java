@@ -121,12 +121,25 @@ class Map2Test {
         result2.put("that", 4);
         String[] stringArray2 = {"this", "and", "that", "and"};
         assertTrue(Map2.wordLen(stringArray2).equals(result2));
-
+        
         Map<String, Integer> result3 = new HashMap<>();
         result3.put("this", 4);
         result3.put("and", 3);
         String[] stringArray3 = {"this", "and", "that", "and"};
         assertFalse(Map2.wordLen(stringArray3).equals(result3));
+    }   
+
+    @Test
+    void nathan_wordLen(){
+        String[] strings = {"cat", "dog", "bunny", "caterpillar", "kangaroo", "Cat", "cat"};
+        Map<String, Integer> map1 = new HashMap<>();
+        map1 = Map2.wordLen(strings);
+        assertEquals(3, map1.get("cat"));
+        assertEquals(3, map1.get("dog"));
+        assertEquals(5, map1.get("bunny"));
+        assertEquals(11, map1.get("caterpillar"));
+        assertEquals(8, map1.get("kangaroo"));
+        assertEquals(3, map1.get("Cat"));
     }
 
 
