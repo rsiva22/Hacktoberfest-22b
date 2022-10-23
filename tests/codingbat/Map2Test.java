@@ -19,6 +19,15 @@ class Map2Test {
     }
 
     @Test
+    void gwen_pairs() {
+        String[] namesWithLastInitial = {"GwenA", "StephenJ", "JaymesV"};
+        Map<String, String> initials = Map2.pairs(namesWithLastInitial);
+        assertEquals("A", initials.get("G"));
+        assertEquals("J", initials.get("S"));
+        assertEquals("V", initials.get("J"));
+    }
+    
+    @Test
     void stephen_wordMultiple() {
         String[] words = new String[] {"Hi", "Hello", "Hola", "Hi"};
 

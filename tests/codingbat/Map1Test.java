@@ -342,4 +342,17 @@ class Map1Test {
 
     }
 
+    @Test
+    void gwen_mapBully() {
+        Map<String, String> map = new HashMap<>();
+        map.put("a", "cookie");
+        map.put("b", "");
+        Map1.mapBully(map);
+        assertEquals("", map.get("a"));
+        assertEquals("cookie", map.get("b"));
+
+        assertTrue("".equals(map.get("a")));
+        assertTrue("cookie".equals(map.get("b")));
+
+    }
 }
