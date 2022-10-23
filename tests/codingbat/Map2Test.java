@@ -19,6 +19,17 @@ class Map2Test {
     }
 
     @Test
+    void william_wordLen() {
+        String[] strings = {"hello", "goodbye"};
+        Map<String, Integer> result = Map2.wordLen(strings);
+        assertTrue(result.containsValue(5));
+        assertTrue(result.containsValue(7));
+        assertFalse(result.containsValue(8));
+        assertEquals(result.containsValue(5), result.containsValue(5));
+        assertEquals(result.containsKey("hello"), result.containsKey("hello"));
+    }
+
+    @Test
     void april_wordCount(){
         String[] words = {"apple", "bee", "caramel", "dark", "bee", "elephant", "apple", "dark", "fog"};
         Map<String, Integer> result = Map2.wordCount(words);
