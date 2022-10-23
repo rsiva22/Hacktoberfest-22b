@@ -17,6 +17,33 @@ class Map2Test {
         String[] expected = {"caterpillar", "dog", "butterfly", "cat", "kitten", "kangaroo", "bunny", "centipede", "crocodile"};
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
+    @Test
+    void zaid_pairs(){
+        String[] strings = {"Hello", "There"};
+        Map<String, String> results = Map2.pairs(strings);
+        Map<String, String> expected = new HashMap<>();
+        expected.put("H","o");
+        expected.put("T","e");
+        assertEquals(expected.toString(), results.toString());
+        assertTrue(expected.equals(results));
+
+        String[] strings2 = {"Taco", "136"};
+        Map<String, String> result2 = Map2.pairs(strings2);
+        Map<String, String> expected2 = new HashMap<>();
+        expected2.put("T","o");
+        expected2.put("1","6");
+        assertEquals(expected2.toString(), result2.toString());
+
+
+
+
+
+
+
+
+
+
+    }
 
     @Test
     void gwen_pairs() {
