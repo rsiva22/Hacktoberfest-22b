@@ -19,6 +19,25 @@ class Map2Test {
     }
 
     @Test
+    void stephen_wordMultiple() {
+        String[] words = new String[] {"Hi", "Hello", "Hola", "Hi"};
+
+        Map<String,Boolean> moreThanOne = Map2.wordMultiple(words);
+
+        assertTrue(moreThanOne.get("Hi"));
+        assertFalse(moreThanOne.get("Hola"));
+
+
+        String[] words2 = new String[] {"Hi", "Hello", "Hola","Howdy","Hola", "Hi"};
+
+        Map<String,Boolean> moreThanOne2 = Map2.wordMultiple(words2);
+
+        assertTrue(moreThanOne2.get("Hi"));
+        assertTrue(moreThanOne2.get("Hola"));
+        assertFalse(moreThanOne2.get("Howdy"));
+    }
+
+    @Test
     void william_wordLen() {
         String[] strings = {"hello", "goodbye"};
         Map<String, Integer> result = Map2.wordLen(strings);
@@ -132,7 +151,7 @@ class Map2Test {
         assertEquals(Arrays.toString(expected2), Arrays.toString(result2));
     } // andy_firstSwap end
 
-
+    @Test
     void hoang_wordCount() {
         String[] strings = {"cat", "dog", "cat", "fish", "rabbit", "rabbit", "rabbit", "bird"};
         Map<String, Integer> map = Map2.wordCount(strings);
