@@ -28,6 +28,27 @@ class Map1Test {
         assertTrue(map4.containsKey("b"));
 
     }
+    
+    @Test
+    void stephen_mapAB3() {
+        HashMap<String,String> firstMap = new HashMap<>();
+        firstMap.put("a","Test Value");
+        firstMap.put("d","I'm Cool");
+        Map<String, String> testOneMap = Map1.mapAB3(firstMap);
+        assertEquals("Test Value",testOneMap.get("a"));
+        assertEquals("Test Value",testOneMap.get("b"));
+        assertEquals("I'm Cool",testOneMap.get("d"));
+
+
+        HashMap<String,String> secondMap = new HashMap<>();
+        secondMap.put("a","Test Value");
+        secondMap.put("b","Woot Woot");
+        secondMap.put("c","You're Cool");
+        Map<String, String> testTwoMap = Map1.mapAB3(secondMap);
+        assertEquals("Test Value",testTwoMap.get("a"));
+        assertEquals("Woot Woot",testTwoMap.get("b"));
+        assertEquals("You're Cool",testTwoMap.get("c"));
+    }
 
     @Test
     void william_mapBully() {
