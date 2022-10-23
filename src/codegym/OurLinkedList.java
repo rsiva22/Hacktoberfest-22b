@@ -1,5 +1,8 @@
 package codegym;
 
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
+
 public class OurLinkedList<T> {
     private Node<T> first = new Node<>();
     private Node<T> last = new Node<>();
@@ -48,6 +51,14 @@ public class OurLinkedList<T> {
         ref.next = node;
         last.prev = node;
         node.prev = ref;
+    }
+
+    public T getFirst(){
+        Node<T> f = first.next;
+        if (f.value == null){
+            throw new NoSuchElementException();
+        }
+        return f.value;
     }
 
     public static class Node<T> {
