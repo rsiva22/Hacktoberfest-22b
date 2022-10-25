@@ -96,10 +96,21 @@ class Map2Test {
         String[] words2 = new String[] {"Hi", "Hello", "Hola","Howdy","Hola", "Hi"};
 
         Map<String,Boolean> moreThanOne2 = Map2.wordMultiple(words2);
-
         assertTrue(moreThanOne2.get("Hi"));
         assertTrue(moreThanOne2.get("Hola"));
         assertFalse(moreThanOne2.get("Howdy"));
+    }
+  
+    @Test
+    void john_firstSwap(){
+        String[] str = {"goat","bat","john","bart","george", "kaitlyn","box"};
+        String[] result = Map2.firstSwap(str);
+        String[] expected = {"george","bart","john","bat","goat","kaitlyn","box"};
+        assertEquals(Arrays.toString(expected),Arrays.toString(result));
+        assertTrue(result[2].equals("john"));
+        assertTrue(result[5].equals("kaitlyn"));
+        assertTrue(result[6].equals("box"));
+
     }
 
     @Test
