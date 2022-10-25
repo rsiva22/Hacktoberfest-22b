@@ -21,4 +21,12 @@ class OurLinkedListTest {
     @Test
     void testAdd() {
     }
+    @Test
+    void poll() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        assertEquals(list.poll(),"pizza");
+    }
 }

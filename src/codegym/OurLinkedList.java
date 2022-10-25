@@ -31,6 +31,7 @@ public class OurLinkedList<T> {
         node.next = currentElement;
     }
 
+
     public T get(int index) {
         Node currentElement = first.next;
         int count = 0;
@@ -54,5 +55,16 @@ public class OurLinkedList<T> {
         private Node prev;
         private T value;
         private Node next;
+    }
+    public T poll(){
+        var r = first.next;
+        first.next = r.next;
+        r.next.prev=first;
+        return (T)r.value;
+
+//        var rv = first.value;
+//        first.next.prev = first.prev;
+//        first.prev.next = first.next;
+//        return rv;
     }
 }
