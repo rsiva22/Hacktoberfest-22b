@@ -221,6 +221,12 @@ class Map1Test {
         map1.put("ice cream", "42");
         Map1.topping2(map1);
         assertTrue(map1.containsKey("yogurt"));
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("spinach","rats");
+        Map1.topping2(map3);
+        assertEquals(map3.get("spinach") , "nuts");
+//i fixed topping 2
     }
 
 
