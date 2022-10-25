@@ -372,6 +372,17 @@ class Map1Test {
         //expected3.put("b", "");
         expected3.put("c", "cake");
         assertFalse(Map1.mapAB4(map3).equals(expected3));
+
+        // mapAB4({"a": "aa", "b": "bbb"}) → {"a": "aa", "b": "bbb", "c": "bbb"}
+
+        Map<String, String> map4 = new HashMap<>();
+        map4.put("a", "aa");
+        map4.put("b", "bbb");
+        Map<String, String> expected4 = new HashMap<>();
+        expected4.put("a", "aa");
+        expected4.put("b", "bbb");
+        expected4.put("c", "bbb");
+        assertEquals(Map1.mapAB4(map4),expected4);
     }
 
 
