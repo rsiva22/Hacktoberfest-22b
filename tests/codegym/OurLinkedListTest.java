@@ -2,6 +2,8 @@ package codegym;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -21,4 +23,18 @@ class OurLinkedListTest {
     @Test
     void testAdd() {
     }
+
+    @Test
+    void testGetLast() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        assertEquals("five", list.getLast());
+        OurLinkedList<String> list2 = new OurLinkedList<>();
+        assertThrows(NoSuchElementException.class, () -> list2.getLast());
+    }
+
 }
