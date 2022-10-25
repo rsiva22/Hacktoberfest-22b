@@ -67,13 +67,4 @@ public class OurLinkedList<T> {
 
         return (T)node.value;
     }
-
-    public void offerFirst(T element) {
-        Node node = new Node();
-        node.value = element;
-        Node ref = first.next;
-        ref.prev = node;
-        first.next = node;
-        node.next = ref;
-    }
 }
