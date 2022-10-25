@@ -416,4 +416,21 @@ class Map1Test {
         assertTrue("cookie".equals(map.get("b")));
 
     }
+
+    @Test
+    void molly_mapAB3() {
+
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "blue");
+        Map<String, String> map2 = Map1.mapAB3(map1);
+        assertTrue(map2.get("b").equals(map2.get("a")));
+
+
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("a", "purple");
+        map3.put("b", "green");
+        Map<String, String> map4 = Map1.mapAB3(map3);
+        assertFalse(map4.get("b").equals(map4.get("a")));
+    }
+
 }
