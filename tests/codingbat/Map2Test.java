@@ -291,6 +291,13 @@ class Map2Test {
         String result3 = Map2.wordAppend(strings3);
         String expected3 = "b";
         assertFalse(result3.equals(expected3));
+
+        // wordAppend(["this", "or", "that", "and", "this", "and", "that"]) → "thisandthat"
+
+        String[] strings4 = {"this", "or", "that", "and", "this", "and", "that"};
+        String result4 = Map2.wordAppend(strings4);
+        String expected4 = "thisandthat";
+        assertTrue(result4.equals(expected4));
     }
 
 
