@@ -41,6 +41,7 @@ class Map1Test {
         map1.put("a", "screamFest");
         map1=mapBully(map1);
         assertTrue(map1.containsKey("b"));
+//        assertFalse(Boolean.parseBoolean("candy"),map1.get("b"));
 //        assertFalse("candy",map1.get("b"));
     }
   
@@ -266,7 +267,6 @@ class Map1Test {
         assertEquals("no b", returnedMap4.get("a"));
         assertEquals("c stays", returnedMap4.get("c"));
     } // andy_mapAB4 end
-
 
 
     @Test
