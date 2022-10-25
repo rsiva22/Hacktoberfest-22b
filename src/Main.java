@@ -1,6 +1,5 @@
 import codingbat.Map1;
 import codingbat.Map2;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +15,5 @@ public class Main {
         Map<String, String> result = Map1.mapAB3(stuff);
         System.out.println(result);
     }
-
 
 }
