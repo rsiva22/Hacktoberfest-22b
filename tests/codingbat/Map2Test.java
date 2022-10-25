@@ -67,10 +67,23 @@ class Map2Test {
         assertEquals("V", initials.get("J"));
     }
     
+    
+
     @Test
+    void rith_wordCount() {
+        String[] strings = {"cat", "dog", "bunny", "cat", "bunny", "cat"};
+        Map<String, Integer> result = Map2.wordCount(strings);
+        Map<String, Integer> expected = new HashMap<>();
+        expected.put("cat",3);
+        expected.put("dog",1);
+        expected.put("bunny",2);
+        assertEquals(expected, result);
+        assertTrue(result.get("cat")==3);
+    }
+
+  @Test
     void stephen_wordMultiple() {
         String[] words = new String[] {"Hi", "Hello", "Hola", "Hi"};
-
         Map<String,Boolean> moreThanOne = Map2.wordMultiple(words);
 
         assertTrue(moreThanOne.get("Hi"));

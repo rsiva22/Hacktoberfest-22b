@@ -30,6 +30,21 @@ class Map1Test {
     }
 
     @Test
+    void rith_map_AB(){
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a","Hi");
+        map1.put("b","There");
+        Map<String, String> map2 = Map1.mapAB(map1);
+        assertEquals("HiThere", map2.get("ab"));
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("b","meh");
+        map3.put("b","meh");
+        Map<String, String> map4 = Map1.mapAB(map3);
+        assertFalse(map4.containsKey("ab"));
+    }
+
+
+    @Test
     void tylerH_mapShare() {
         //tylerhand
         Map<String, String> map1 = new HashMap<>();
