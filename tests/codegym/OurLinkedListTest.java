@@ -37,4 +37,14 @@ class OurLinkedListTest {
         assertEquals(remove2, "pizza");
 
     }
+    @Test
+    void testOfferFirst() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("Java");
+        list.add("Python");
+        list.offerFirst("C#");
+        assertTrue(list.get(0).equals("C#"));
+        assertTrue(list.get(1).equals("Java"));
+        assertTrue(list.get(2).equals("Python"));
+    }
 }
