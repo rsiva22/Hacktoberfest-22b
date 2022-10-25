@@ -315,7 +315,7 @@ class Map2Test {
         assertEquals(2,map.get("a"));
         assertEquals(2,map.get("b"));
         assertEquals(1,map.get("c"));
-        assertFalse(2,map.get("c"));
+//        assertFalse(2,map.get("c"));
     }
 
     @Test
