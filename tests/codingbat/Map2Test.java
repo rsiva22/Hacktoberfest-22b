@@ -21,6 +21,16 @@ class Map2Test {
         String[] expected = {"caterpillar", "dog", "butterfly", "cat", "kitten", "kangaroo", "bunny", "centipede", "crocodile"};
         assertEquals(Arrays.toString(expected), Arrays.toString(result));
     }
+
+    @Test
+    void tylerb_wordLenTrue(){
+        String[] strings = {"One", "Seven", "Four","Testing"};
+        Map<String, Integer> result = Map2.wordLen(strings);
+
+        String excpected = "{One=3, Four=4, Seven=5, Testing=7}";
+        assertEquals(result.toString(), excpected);
+    }
+
     
     @Test
     void tylerH_wordLen() {
@@ -168,6 +178,7 @@ class Map2Test {
         String[] stringArray3 = {"this", "and", "that", "and"};
         assertFalse(Map2.wordLen(stringArray3).equals(result3));
     }   
+
 
     @Test
     void nathan_wordLen(){
