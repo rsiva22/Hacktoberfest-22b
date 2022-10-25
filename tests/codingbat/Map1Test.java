@@ -30,6 +30,23 @@ class Map1Test {
     }
 
     @Test
+    void tylerH_mapShare() {
+        //tylerhand
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "aaa");
+        map1.put("b", "bbb");
+        map1.put("c", "ccc");
+        Map<String, String> map2 = Map1.mapShare(map1);
+        Map<String, String> map3 = new HashMap<>();
+        map3.put("b", "xyz");
+        map3.put("c", "ccc");
+        Map<String, String> map4 = Map1.mapShare(map3);
+        assertTrue(map4.containsKey("b"));
+        assertFalse(map4.containsKey("c"));
+
+    }
+    
+    @Test
     void nathan_mapShare(){
         Map<String, String> map1 = new HashMap<>();
         map1.put("a", "a");
