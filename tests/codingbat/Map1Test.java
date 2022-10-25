@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import static codingbat.Map1.mapBully;
 import static codingbat.Map1.topping1;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,6 +29,21 @@ class Map1Test {
 
     }
 
+    @Test
+    void gideon_mapBully() {
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("a", "candy");
+        map1=mapBully(map1);
+        assertTrue(map1.containsKey("a"));
+        assertTrue(map1.containsKey("b"));
+        assertEquals("",map1.get("a"));
+        assertEquals("candy",map1.get("b"));
+        map1.put("a", "screamFest");
+        map1=mapBully(map1);
+        assertTrue(map1.containsKey("b"));
+//        assertFalse("candy",map1.get("b"));
+    }
+  
     @Test
     void rith_map_AB(){
         Map<String, String> map1 = new HashMap<>();
