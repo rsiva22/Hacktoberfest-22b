@@ -182,5 +182,4 @@ public class Map2 {
         return strings;
     }
 
-
 }
