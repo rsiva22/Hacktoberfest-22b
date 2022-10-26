@@ -38,7 +38,7 @@ class OurLinkedListTest {
 
     }
     @Test
-    void testOfferFirst() {
+    void gwenTestOfferFirst() {
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("Java");
         list.add("Python");
