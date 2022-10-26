@@ -37,4 +37,22 @@ class OurLinkedListTest {
         assertEquals(remove2, "pizza");
 
     }
+
+    @Test
+    void indexOf() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("red");
+        list.add("orange");
+        list.add("yellow");
+
+        int itemIndex1 = list.indexOf("red");
+        int itemIndex2 = list.indexOf("purple");
+        int itemIndex3 = list.indexOf("yellow");
+        int itemIndex4 = list.indexOf("orange");
+
+        assertEquals(0, itemIndex1);
+        assertEquals(2, itemIndex3);
+        assertEquals(-1, itemIndex2);
+        assertEquals(1, itemIndex4);
+    }
 }

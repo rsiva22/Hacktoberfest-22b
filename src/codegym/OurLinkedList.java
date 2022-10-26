@@ -67,4 +67,20 @@ public class OurLinkedList<T> {
 
         return (T)node.value;
     }
+
+    public int indexOf(T element) {
+        int index = 0;
+        Node current = first.next;
+
+        while(current != null) {
+            if(current.value == element) {
+                return index;
+
+            } else {
+                current = current.next;
+                index++;
+            }
+        }
+        return -1;
+    }
 }
