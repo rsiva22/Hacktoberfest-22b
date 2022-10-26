@@ -75,5 +75,6 @@ public class OurLinkedList<T> {
         ref.prev = node;
         first.next = node;
         node.next = ref;
+        node.prev = first;
     }
 }
