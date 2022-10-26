@@ -38,12 +38,13 @@ class OurLinkedListTest {
 
     }
     @Test
-    void testRemoveValue(){
+    void rith_removeValue(){
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("pizza");
         list.add("chicken wings");
         list.add("french fries");
         list.remove("pizza");
+        list.remove("soda");
         assertEquals("chicken wings",list.get(0));
         assertEquals("french fries",list.get(1));
         list.add("soda");
