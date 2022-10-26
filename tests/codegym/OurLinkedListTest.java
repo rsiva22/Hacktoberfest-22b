@@ -47,6 +47,7 @@ class OurLinkedListTest {
         list.remove("soda");
         assertEquals("chicken wings",list.get(0));
         assertEquals("french fries",list.get(1));
+
         list.add("soda");
         list.remove("french fries");
         assertEquals("soda",list.get(1));
