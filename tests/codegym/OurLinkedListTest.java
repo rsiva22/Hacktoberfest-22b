@@ -23,7 +23,7 @@ class OurLinkedListTest {
     }
 
     @Test
-    void testPeekLast(){
+    void andy_testPeekLast(){
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("pizza");
         list.add("chicken wings");
