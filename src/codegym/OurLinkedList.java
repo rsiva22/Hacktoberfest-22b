@@ -67,4 +67,20 @@ public class OurLinkedList<T> {
 
         return (T)node.value;
     }
+
+    public boolean offer(T value){
+        try{
+            Node node = new Node();
+            node.value = value;
+            Node ref = last.prev;
+            ref.next = node;
+            last.prev = node;
+            node.prev = ref;
+
+            return true;
+        }
+        catch(Exception ex){
+            return false;
+        }
+    }
 }

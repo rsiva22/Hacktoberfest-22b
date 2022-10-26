@@ -37,4 +37,20 @@ class OurLinkedListTest {
         assertEquals(remove2, "pizza");
 
     }
+
+    @Test
+    void testOffer(){
+        OurLinkedList<Integer> list = new OurLinkedList<>();
+        boolean test1 = list.offer(4);
+        boolean test2 = list.offer(3);
+        boolean test3 = list.offer(100000);
+        // Test returns
+        assertTrue(test1);
+        assertTrue(test2);
+        // Test placements
+        assertEquals(4,list.get(0));
+        assertEquals(3,list.get(1));
+        assertEquals(100000, list.get(2));
+
+    }
 }
