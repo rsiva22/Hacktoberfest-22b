@@ -39,7 +39,7 @@ class OurLinkedListTest {
     }
 
     @Test
-    void testOffer(){
+    void john_TestOffer(){
         OurLinkedList<Integer> list = new OurLinkedList<>();
         boolean test1 = list.offer(4);
         boolean test2 = list.offer(3);
@@ -47,6 +47,7 @@ class OurLinkedListTest {
         // Test returns
         assertTrue(test1);
         assertTrue(test2);
+        assertTrue(test3);
         // Test placements
         assertEquals(4,list.get(0));
         assertEquals(3,list.get(1));
