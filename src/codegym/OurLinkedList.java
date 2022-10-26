@@ -69,11 +69,9 @@ public class OurLinkedList<T> {
     }
 
     public void remove(T value) {
-        Node node = new Node();
-        node.value = value;
         Node currentNode = first.next;
-        while (!(currentNode.next == null)) {
-            if (currentNode.value.equals(node.value)) {
+        while (currentNode.next != null) {
+            if (currentNode.value.equals(value)) {
                 Node beforeNode = currentNode.prev;
                 Node afterNode = currentNode.next;
                 beforeNode.next = afterNode;
