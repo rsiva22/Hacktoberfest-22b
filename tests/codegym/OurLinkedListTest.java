@@ -23,6 +23,20 @@ class OurLinkedListTest {
     }
 
     @Test
+    void marc_remove() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("Reese's");
+        list.add("Skittles");
+        list.add("Peanut Butter M&Ms");
+        assertEquals("Reese's", list.remove());
+        assertEquals("Skittles", list.remove());
+        assertEquals("Peanut Butter M&Ms", list.get(0));
+    }
+
+
+
+
+    @Test
     void poll() {
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("pizza");

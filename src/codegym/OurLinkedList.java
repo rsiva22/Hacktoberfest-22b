@@ -1,5 +1,7 @@
 package codegym;
 
+import java.util.NoSuchElementException;
+
 public class OurLinkedList<T> {
     private Node<T> first = new Node<>();
     private Node<T> last = new Node<>();
@@ -35,6 +37,9 @@ public class OurLinkedList<T> {
 
     public T get(int index) {
         Node currentElement = first.next;
+        if(currentElement == last || currentElement == null) {
+            throw new NoSuchElementException("Could not get that index");
+        }
         int count = 0;
         while (count < index && (currentElement) != null) {
             currentElement = currentElement.next;
@@ -51,13 +56,41 @@ public class OurLinkedList<T> {
         ref.next = node;
         last.prev = node;
         node.prev = ref;
+        node.next = last;
     }
+
+    public T remove() {
+        Node nodeToRemove = first.next;
+        first.next = nodeToRemove.next;
+        nodeToRemove.next.prev = first;
+        return (T)nodeToRemove.value;
+    }
+
+
+
 
     public static class Node<T> {
         private Node prev;
         private T value;
         private Node next;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public T poll(){
