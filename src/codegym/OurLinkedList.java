@@ -71,7 +71,6 @@ public class OurLinkedList<T> {
 
         return (T)node.value;
     }
-
     public <Type> Type[] toArray(Type[] a) {
         Node currentNode = first.next;
         Type[] arr = (Type[]) Array.newInstance(a.getClass().getComponentType(), this.size());
@@ -84,4 +83,5 @@ public class OurLinkedList<T> {
 
         return arr;
     }
+
 }
