@@ -50,11 +50,25 @@ public class OurLinkedList<T> {
         ref.next = node;
         last.prev = node;
         node.prev = ref;
+        node.next = last;
     }
 
     public T set(int index, T value) {
         Node node = new Node();
-
+        node.value = value;
+        Node currentElement = first.next;
+        for(int i = 0; i < index; i++) {
+            currentElement = currentElement.next;
+        }
+        Node oldNode = currentElement;
+//        currentElement.value = node;
+        node.prev = currentElement.prev;
+        node.next = currentElement.next;
+        if (currentElement.prev != null)
+            currentElement.prev.next = node;
+        if (currentElement.next != null)
+            currentElement.next.prev = node;
+        return (T) oldNode;
     }
 
 

@@ -21,4 +21,20 @@ class OurLinkedListTest {
     @Test
     void testAdd() {
     }
+
+    @Test
+    void hoang_Test_set() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        list.set(1, "cookies");
+        assertEquals("cookies", list.get(1));
+        list.add("candy");
+        list.add("book");
+        list.set(4, "banana");
+        list.set(1, "apple");
+        assertEquals("banana", list.get(4));
+        assertEquals("apple", list.get(1));
+    }
 }
