@@ -22,7 +22,7 @@ public class OurLinkedList<T> {
         Node node = new Node();
         node.value = value;
         Node currentElement = first.next;
-        for(int i = 0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             currentElement = currentElement.next;
         }
         Node ref = currentElement.prev;
@@ -59,12 +59,28 @@ public class OurLinkedList<T> {
     }
 
     // Retrieves and removes the head (first element) of this list.
-    public T remove( ) {
+    public T remove() {
         Node node = new Node();
         node = first;
         first = first.next;
         first.prev = null;
 
-        return (T)node.value;
+        return (T) node.value;
+    }
+
+    public void remove(T value) {
+        Node node = new Node();
+        node.value = value;
+        Node currentNode = first.next;
+        while (!(currentNode.next == null)) {
+            if (currentNode.value.equals(node.value)) {
+                Node beforeNode = currentNode.prev;
+                Node afterNode = currentNode.next;
+                beforeNode.next = afterNode;
+                afterNode.prev = beforeNode;
+                break;
+            }
+            currentNode = currentNode.next;
+        }
     }
 }

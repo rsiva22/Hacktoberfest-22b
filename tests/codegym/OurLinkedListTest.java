@@ -37,4 +37,18 @@ class OurLinkedListTest {
         assertEquals(remove2, "pizza");
 
     }
+    @Test
+    void testRemoveValue(){
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        list.remove("pizza");
+        assertEquals("chicken wings",list.get(0));
+        assertEquals("french fries",list.get(1));
+        list.add("soda");
+        list.remove("french fries");
+        assertEquals("soda",list.get(1));
+
+    }
 }
