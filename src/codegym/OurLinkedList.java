@@ -74,7 +74,7 @@ public class OurLinkedList<T> {
 
     public <Type> Type[] toArray(Type[] a) {
         Node currentNode = first.next;
-        Type[] arr = (Type[]) Array.newInstance(a.getClass().getComponentType(), 3);
+        Type[] arr = (Type[]) Array.newInstance(a.getClass().getComponentType(), this.size());
         int index = 0;
         while(currentNode.value != null) {
             System.out.println(index + ": " + currentNode.value);
