@@ -17,6 +17,7 @@ public class OurLinkedList<T> {
         }
     }
 
+
     public void add(int index, T value) {
         Node node = new Node();
         node.value = value;
@@ -42,6 +43,7 @@ public class OurLinkedList<T> {
         return (T) currentElement.value;
     }
 
+
     public void add(T value) {
         Node node = new Node();
         node.value = value;
@@ -56,6 +58,8 @@ public class OurLinkedList<T> {
         private T value;
         private Node next;
     }
+
+
     public T poll(){
         var r = first.next;
         first.next = r.next;
@@ -66,5 +70,15 @@ public class OurLinkedList<T> {
 //        first.next.prev = first.prev;
 //        first.prev.next = first.next;
 //        return rv;
+    }
+
+    // Retrieves and removes the head (first element) of this list.
+    public T remove( ) {
+        Node node = new Node();
+        node = first;
+        first = first.next;
+        first.prev = null;
+
+        return (T)node.value;
     }
 }
