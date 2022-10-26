@@ -1,5 +1,8 @@
 package codegym;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class OurLinkedList<T> {
     private Node<T> first = new Node<>();
     private Node<T> last = new Node<>();
@@ -50,6 +53,7 @@ public class OurLinkedList<T> {
         ref.next = node;
         last.prev = node;
         node.prev = ref;
+        node.next = last;
     }
 
     public static class Node<T> {
@@ -66,5 +70,18 @@ public class OurLinkedList<T> {
         first.prev = null;
 
         return (T)node.value;
+    }
+
+    public <Type> Type[] toArray(Type[] a) {
+        Node currentNode = first.next;
+        Type[] arr = (Type[]) Array.newInstance(a.getClass().getComponentType(), 3);
+        int index = 0;
+        while(currentNode.value != null) {
+            System.out.println(index + ": " + currentNode.value);
+            arr[index++] = (Type)currentNode.value;
+            currentNode = currentNode.next;
+        }
+
+        return arr;
     }
 }
