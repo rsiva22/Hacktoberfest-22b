@@ -30,5 +30,5 @@ class OurLinkedListTest {
         list.add("french fries");
         assertEquals(list.poll(),"pizza");
     }
-    
+
 }
