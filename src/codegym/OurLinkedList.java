@@ -52,6 +52,12 @@ public class OurLinkedList<T> {
         node.prev = ref;
     }
 
+    public T set(int index, T value) {
+        Node node = new Node();
+
+    }
+
+
     public static class Node<T> {
         private Node prev;
         private T value;
