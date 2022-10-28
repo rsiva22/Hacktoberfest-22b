@@ -58,6 +58,18 @@ public class OurLinkedList<T> {
         private Node next;
     }
 
+    public T poll(){
+        var r = first.next;
+        first.next = r.next;
+        r.next.prev=first;
+        return (T)r.value;
+
+//        var rv = first.value;
+//        first.next.prev = first.prev;
+//        first.prev.next = first.next;
+//        return rv;
+    }
+
     // Retrieves and removes the head (first element) of this list.
     public T remove() {
         Node toBeRemoved = first.next;
