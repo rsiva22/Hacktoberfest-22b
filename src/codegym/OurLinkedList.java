@@ -64,7 +64,7 @@ public class OurLinkedList<T> {
         node = first;
         first = first.next;
         first.prev = null;
-//
+
         return (T)node.value;
     }
 }
