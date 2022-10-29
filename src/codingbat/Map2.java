@@ -45,6 +45,7 @@ public class Map2 {
         return map;
     }
 
+
     /*
      * The classic word-count algorithm: given an array of strings, return
      * a Map<String, Integer> with a key for each different string, with
@@ -80,6 +81,9 @@ public class Map2 {
         }
         return map;
     }
+
+
+
 
     /*
      * Loop over the given array of strings to build a result string like
@@ -177,19 +181,5 @@ public class Map2 {
         }
         return strings;
     }
-    //    Given an array of strings, return a Map<String, Integer> containing a key for every different string in the array, and the value is that string's length.
-    //    wordLen(["a", "bb", "a", "bb"]) → {"bb": 2, "a": 1}
-    //    wordLen(["this", "and", "that", "and"]) → {"that": 4, "and": 3, "this": 4}
-    //    wordLen(["code", "code", "code", "bug"]) → {"code": 4, "bug": 3}
-    //    tyler hand
-    public static Map<String, Integer> wordLenTylerHand(String[] strings) {
-        Map<String,Integer> map = new HashMap<>();
-        for (int i = 0; i < strings.length; i++){
-            String temp = strings[i];
-            map.put(temp,temp.length());
-        }
-        return map;
-    }
-
 
 }
