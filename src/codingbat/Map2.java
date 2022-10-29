@@ -181,7 +181,7 @@ public class Map2 {
     //    wordLen(["a", "bb", "a", "bb"]) → {"bb": 2, "a": 1}
     //    wordLen(["this", "and", "that", "and"]) → {"that": 4, "and": 3, "this": 4}
     //    wordLen(["code", "code", "code", "bug"]) → {"code": 4, "bug": 3}
-    //    tylerhand
+    //    tyler hand
     public static Map<String, Integer> wordLenTylerHand(String[] strings) {
         Map<String,Integer> map = new HashMap<>();
         for (int i = 0; i < strings.length; i++){

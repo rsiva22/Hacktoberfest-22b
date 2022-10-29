@@ -144,7 +144,7 @@ public class Map1 {
     //    mapShare({"a": "aaa", "b": "bbb", "c": "ccc"}) → {"a": "aaa", "b": "aaa"}
     //    mapShare({"b": "xyz", "c": "ccc"}) → {"b": "xyz"}
     //    mapShare({"a": "aaa", "c": "meh", "d": "hi"}) → {"a": "aaa", "b": "aaa", "d": "hi"}
-    //    tylerhand
+    //    tyler hand
     public static Map<String, String> mapShareTylerHandMap1(Map<String, String> map) {
         if (map.containsKey("a") && !map.get("a").equals("")) {
             map.put("b", map.get("a"));
