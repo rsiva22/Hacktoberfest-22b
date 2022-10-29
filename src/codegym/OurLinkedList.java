@@ -61,7 +61,7 @@ public class OurLinkedList<T> {
 
 
     public T poll(){
-        var r = first.next;
+        Node r = first.next;
         first.next = r.next;
         r.next.prev=first;
         return (T)r.value;
@@ -70,6 +70,17 @@ public class OurLinkedList<T> {
 //        first.next.prev = first.prev;
 //        first.prev.next = first.next;
 //        return rv;
+    }
+
+    //Tyler Hand addlast
+    public T addLast(T value){
+        Node node = new Node();
+        node.value = value;
+        Node ref = last.prev;
+        ref.next = node;
+        last.prev = node;
+        node.prev = ref;
+        return (T)node.value;
     }
 
 }
