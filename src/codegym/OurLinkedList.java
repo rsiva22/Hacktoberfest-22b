@@ -104,8 +104,10 @@ public class OurLinkedList<T> {
     public T removeLast() {
         Node node = new Node();
         node = last.prev;
-        last = last.prev.prev;
-        last.next = null;
+        node.prev.next = last;
+        last.prev = node.prev;
+    //        last = last.prev.prev;
+    //        last.next = null;
         return (T)node.value;
     }
 
