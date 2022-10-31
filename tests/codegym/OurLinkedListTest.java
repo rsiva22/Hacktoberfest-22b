@@ -31,4 +31,17 @@ class OurLinkedListTest {
         assertEquals(list.poll(),"pizza");
     }
 
+    @Test
+    void clear() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        list.printAll();
+        list.clear();
+        list.printAll();
+//        assertTrue();
+
+    }
+
 }

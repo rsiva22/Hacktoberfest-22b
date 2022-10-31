@@ -72,4 +72,9 @@ public class OurLinkedList<T> {
 //        return rv;
     }
 
+    public void clear() {
+        first.next = last;
+        last.prev = first;
+    }
+
 }
