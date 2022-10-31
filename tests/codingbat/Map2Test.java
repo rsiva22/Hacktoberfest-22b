@@ -34,7 +34,7 @@ class Map2Test {
     
     @Test
     void tylerH_wordLen() {
-        //tylerhand
+        //
         String[] strings = {"a", "bb", "a", "bb"};
         Map2.wordLen(strings);
         assertEquals(2, Map2.wordLen(strings).get("bb"));
