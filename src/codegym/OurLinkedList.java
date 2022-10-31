@@ -102,17 +102,6 @@ public class OurLinkedList<T> {
         private Node next;
     }
 
-
-    // Retrieves and removes the head (first element) of this list.
-    public T remove() {
-        Node node = new Node();
-        node = first;
-        first = first.next;
-        first.prev = null;
-
-        return (T) node.value;
-    }
-
     public void remove(T value) {
         Node currentNode = first.next;
         while (currentNode.next != null) {

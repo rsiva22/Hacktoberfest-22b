@@ -95,6 +95,7 @@ class OurLinkedListTest {
 
     @Test
     void rith_removeValue(){
+        OurLinkedList<String> list = new OurLinkedList<>();
         list.add("pizza");
         list.add("chicken wings");
         list.add("french fries");    
