@@ -94,6 +94,26 @@ class OurLinkedListTest {
     }
 
     @Test
+    void rith_removeValue(){
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");    
+        list.remove("pizza");
+        list.remove("soda");
+        assertEquals("chicken wings",list.get(0));
+        assertEquals("french fries",list.get(1));
+
+        list.add("soda");
+        list.remove("french fries");
+        assertEquals("soda",list.get(1));
+
+    }
+
+
+
+
+    @Test
     void gwenTestOfferFirst() {
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("Java");
@@ -160,6 +180,6 @@ class OurLinkedListTest {
         OurLinkedList<String> list2 = new OurLinkedList<>();
         assertThrows(NoSuchElementException.class, () -> list2.getLast());
     }
-
+    
 }
 

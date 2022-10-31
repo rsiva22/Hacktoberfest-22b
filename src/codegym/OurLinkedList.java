@@ -102,6 +102,20 @@ public class OurLinkedList<T> {
         private Node next;
     }
 
+    public void remove(T value) {
+        Node currentNode = first.next;
+        while (currentNode.next != null) {
+            if (currentNode.value.equals(value)) {
+                Node beforeNode = currentNode.prev;
+                Node afterNode = currentNode.next;
+                beforeNode.next = afterNode;
+                afterNode.prev = beforeNode;
+                break;
+            }
+            currentNode = currentNode.next;
+        }
+    }
+
 
     public T getLast() {
         Node<T> lastItem = last.prev;
@@ -179,4 +193,3 @@ public class OurLinkedList<T> {
     }
 
 }
-
