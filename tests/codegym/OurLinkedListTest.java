@@ -45,4 +45,15 @@ class OurLinkedListTest {
         assertEquals(list.poll(),"pizza");
     }
 
+    @Test
+    void testRemove() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        String remove1 = list.remove();
+
+        assertEquals(remove1, "pizza");
+
+    }
 }
