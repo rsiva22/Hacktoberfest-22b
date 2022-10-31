@@ -113,7 +113,7 @@ public class OurLinkedList<T> {
         return (T) node.value;
     }
 
-    public boolean remove(T value) {
+    public boolean rith_remove(T value) {
         Node currentNode = first.next;
         boolean bool = false;
         while (currentNode.next != null) {
