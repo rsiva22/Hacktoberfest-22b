@@ -146,7 +146,7 @@ public class OurLinkedList<T> {
             ref.next = node;
             last.prev = node;
             node.prev = ref;
-
+            node.next = last;
             return true;
         }
         catch(Exception ex){
