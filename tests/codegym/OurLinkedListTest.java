@@ -154,6 +154,23 @@ class OurLinkedListTest {
     }
 
     @Test
+    void john_TestOffer(){
+        OurLinkedList<Integer> list = new OurLinkedList<>();
+        boolean test1 = list.offer(4);
+        boolean test2 = list.offer(3);
+        boolean test3 = list.offer(100000);
+        // Test returns
+        assertTrue(test1);
+        assertTrue(test2);
+        assertTrue(test3);
+        // Test placements
+        assertEquals(4,list.get(0));
+        assertEquals(3,list.get(1));
+        assertEquals(100000, list.get(2));
+
+    }
+
+    @Test
     void testRemoveLast() {
         OurLinkedList<String> stringList = new OurLinkedList<>();
         stringList.add("First");

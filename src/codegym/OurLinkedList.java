@@ -137,6 +137,24 @@ public class OurLinkedList<T> {
         return (T)node.value;
     }
 
+
+    public boolean offer(T value){
+        try{
+            Node node = new Node();
+            node.value = value;
+            Node ref = last.prev;
+            ref.next = node;
+            last.prev = node;
+            node.prev = ref;
+            node.next = last;
+            return true;
+        }
+        catch(Exception ex){
+            return false;
+        }
+    }
+
+
     public int size() {
         int count = 0;
         Node currentElement = first.next;
@@ -191,5 +209,6 @@ public class OurLinkedList<T> {
 
         return (T)toBeRemoved.value;
     }
+
 
 }
