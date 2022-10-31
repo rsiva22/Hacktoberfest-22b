@@ -96,6 +96,25 @@ public class OurLinkedList<T> {
         return value;
     }
 
+    public T set(int index, T value) {
+        Node node = new Node();
+        node.value = value;
+        Node currentElement = first.next;
+        for(int i = 0; i < index; i++) {
+            currentElement = currentElement.next;
+        }
+        Node oldNode = currentElement;
+//        currentElement.value = node;
+        node.prev = currentElement.prev;
+        node.next = currentElement.next;
+        if (currentElement.prev != null)
+            currentElement.prev.next = node;
+        if (currentElement.next != null)
+            currentElement.next.prev = node;
+        return (T) oldNode;
+    }
+
+
     public static class Node<T> {
         private Node prev;
         private T value;
