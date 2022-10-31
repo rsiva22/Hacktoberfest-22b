@@ -76,5 +76,20 @@ class OurLinkedListTest {
         assertFalse(list.contains("burger"));
 
     }
+
+    @Test
+    void andy_testPeekLast(){
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        OurLinkedList<Integer> list2 = new OurLinkedList<>();
+        // test that the correct value is returned
+        assertEquals("french fries", list.peekLast());
+        // test that the last value was not removed from the list
+        assertEquals("french fries", list.get(2));
+        // test that null is returned if the list is empty
+        assertNull(list2.peekLast());
+    }
 }
 

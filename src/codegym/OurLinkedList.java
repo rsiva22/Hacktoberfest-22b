@@ -84,6 +84,16 @@ public class OurLinkedList<T> {
         return flag;
     }
 
+    public T peekLast(){
+        T value = null;
+        Node lastValueNode = last.prev;
+        if(!(first.equals(lastValueNode))){
+            // set value to the value of lastValueNode, unless that node is the first node, which dose not hold a value
+            value = (T)lastValueNode.value;
+        }
+        return value;
+    }
+
     public static class Node<T> {
         private Node prev;
         private T value;
