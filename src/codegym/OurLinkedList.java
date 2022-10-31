@@ -1,6 +1,5 @@
 package codegym;
 
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 public class OurLinkedList<T> {
@@ -20,11 +19,12 @@ public class OurLinkedList<T> {
         }
     }
 
+
     public void add(int index, T value) {
         Node node = new Node();
         node.value = value;
         Node currentElement = first.next;
-        for(int i = 0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             currentElement = currentElement.next;
         }
         Node ref = currentElement.prev;
@@ -36,6 +36,9 @@ public class OurLinkedList<T> {
 
     public T get(int index) {
         Node currentElement = first.next;
+        if(currentElement == last || currentElement == null) {
+            throw new NoSuchElementException("Could not get that index");
+        }
         int count = 0;
         while (count < index && (currentElement) != null) {
             currentElement = currentElement.next;
@@ -44,6 +47,7 @@ public class OurLinkedList<T> {
         return (T) currentElement.value;
     }
 
+
     public void add(T value) {
         Node node = new Node();
         node.value = value;
@@ -51,6 +55,7 @@ public class OurLinkedList<T> {
         ref.next = node;
         last.prev = node;
         node.prev = ref;
+        node.next = last;
     }
 
     public T getFirst(){
@@ -66,4 +71,27 @@ public class OurLinkedList<T> {
         private T value;
         private Node next;
     }
+
+    public T poll(){
+        var r = first.next;
+        first.next = r.next;
+        r.next.prev=first;
+        return (T)r.value;
+
+//        var rv = first.value;
+//        first.next.prev = first.prev;
+//        first.prev.next = first.next;
+//        return rv;
+    }
+
+    // Retrieves and removes the head (first element) of this list.
+    public T remove() {
+        Node toBeRemoved = first.next;
+        first.next = toBeRemoved.next;
+        toBeRemoved.next.prev = first;
+
+        return (T)toBeRemoved.value;
+    }
+
 }
+
