@@ -138,6 +138,23 @@ public class OurLinkedList<T> {
     }
 
 
+    public int indexOf(T element) {
+        int index = 0;
+        Node current = first.next;
+
+        while(current != null) {
+            if(current.value == element) {
+                return index;
+
+            } else {
+                current = current.next;
+                index++;
+            }
+        }
+        return -1;
+    }
+
+
     public boolean offer(T value){
         try{
             Node node = new Node();
@@ -209,6 +226,5 @@ public class OurLinkedList<T> {
 
         return (T)toBeRemoved.value;
     }
-
 
 }
