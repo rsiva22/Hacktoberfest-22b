@@ -2,6 +2,7 @@ package codegym;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -63,6 +64,35 @@ class OurLinkedListTest {
         assertEquals(remove1, "pizza");
 
     }
+
+    @Test
+    void testSize() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        assertEquals(3, list.size());
+        OurLinkedList<String> list2 = new OurLinkedList<>();
+        assertEquals(0, list2.size());
+    }
+
+    @Test
+    void testToArrayParameterised() {
+        LocalDate firstTime = LocalDate.of(1998,9,27);
+        LocalDate secondTime = LocalDate.of(1999,12,15);
+        LocalDate thirdTime = LocalDate.now();
+        OurLinkedList<LocalDate> dates = new OurLinkedList<>();
+        dates.add(firstTime);
+        dates.add(secondTime);
+        dates.add(thirdTime);
+
+        LocalDate[] datesArray = dates.toArray(new LocalDate[0]);
+
+        assertEquals(firstTime, datesArray[0]);
+        assertEquals(secondTime, datesArray[1]);
+        assertEquals(thirdTime, datesArray[2]);
+    }
+
     @Test
     void gwenTestOfferFirst() {
         OurLinkedList<String> list = new OurLinkedList<>();
