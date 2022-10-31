@@ -106,5 +106,19 @@ class OurLinkedListTest {
         // Check to see if calling the fifth location in a list returns an exception since it shouldn't exist.
         assertThrows(Exception.class, () -> { stringList.get(5); });
     }
+
+    @Test
+    void testGetLast() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        list.add("four");
+        list.add("five");
+        assertEquals("five", list.getLast());
+        OurLinkedList<String> list2 = new OurLinkedList<>();
+        assertThrows(NoSuchElementException.class, () -> list2.getLast());
+    }
+
 }
 
