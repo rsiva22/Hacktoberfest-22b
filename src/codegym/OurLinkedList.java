@@ -226,7 +226,7 @@ public class OurLinkedList<T> {
     }
 
     public T poll(){
-        var r = first.next;
+        Node r = first.next;
         first.next = r.next;
         r.next.prev=first;
         return (T)r.value;
@@ -237,13 +237,25 @@ public class OurLinkedList<T> {
 //        return rv;
     }
 
+
     // Retrieves and removes the head (first element) of this list.
     public T remove() {
         Node toBeRemoved = first.next;
         first.next = toBeRemoved.next;
         toBeRemoved.next.prev = first;
 
-        return (T)toBeRemoved.value;
+        return (T) toBeRemoved.value;
+    }
+
+    //Tyler Hand addlast
+    public T addLast(T value){
+        Node node = new Node();
+        node.value = value;
+        Node ref = last.prev;
+        ref.next = node;
+        last.prev = node;
+        node.prev = ref;
+        return (T)node.value;
     }
 
 }
