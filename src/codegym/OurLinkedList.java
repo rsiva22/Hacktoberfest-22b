@@ -255,6 +255,7 @@ public class OurLinkedList<T> {
         ref.next = node;
         last.prev = node;
         node.prev = ref;
+        node.next = last;
         return (T)node.value;
     }
 
