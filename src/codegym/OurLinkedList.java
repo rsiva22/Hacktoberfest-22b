@@ -101,6 +101,16 @@ public class OurLinkedList<T> {
     }
 
 
+    public T getLast() {
+        Node<T> lastItem = last.prev;
+        if (lastItem.value ==  null) {
+            throw new NoSuchElementException();
+        }
+        else {
+            return lastItem.value;
+        }
+    }
+
     public T removeLast() {
         Node node = new Node();
         node = last.prev;
