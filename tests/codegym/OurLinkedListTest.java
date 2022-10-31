@@ -63,5 +63,18 @@ class OurLinkedListTest {
         assertEquals(remove1, "pizza");
 
     }
+    @Test
+    void testContains(){
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        assertTrue(list.contains("pizza"));
+        assertTrue(list.contains("french fries"));
+        assertTrue(list.contains("chicken wings"));
+        assertFalse(list.contains("PIZZA"));
+        assertFalse(list.contains("burger"));
+
+    }
 }
 

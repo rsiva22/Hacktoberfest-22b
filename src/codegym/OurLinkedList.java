@@ -66,6 +66,24 @@ public class OurLinkedList<T> {
         return f.value;
     }
 
+    public boolean contains(T ob1){
+        boolean flag = false;
+        Node currentElement = first.next;
+        while((currentElement) != null)
+        {
+            if(currentElement.value == ob1){
+                flag = true;
+                break;
+            }
+            else{
+                flag = false;
+
+            }
+            currentElement = currentElement.next;
+        }
+        return flag;
+    }
+
     public static class Node<T> {
         private Node prev;
         private T value;
