@@ -2,6 +2,8 @@ package codegym;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -19,7 +21,15 @@ class OurLinkedListTest {
     }
 
     @Test
-    void testAdd() {
+    void testGetFirst(){
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        assertEquals("pizza", list.getFirst());
+
+        OurLinkedList<String> list2 = new OurLinkedList<>();
+        assertThrows(NoSuchElementException.class, () -> list2.getFirst());
     }
 
     @Test
@@ -32,9 +42,6 @@ class OurLinkedListTest {
         assertEquals("Skittles", list.remove());
         assertEquals("Peanut Butter M&Ms", list.get(0));
     }
-
-
-
 
     @Test
     void poll() {
@@ -57,3 +64,4 @@ class OurLinkedListTest {
 
     }
 }
+

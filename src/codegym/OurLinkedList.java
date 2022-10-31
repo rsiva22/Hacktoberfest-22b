@@ -58,6 +58,14 @@ public class OurLinkedList<T> {
         node.next = last;
     }
 
+    public T getFirst(){
+        Node<T> f = first.next;
+        if (f.value == null){
+            throw new NoSuchElementException();
+        }
+        return f.value;
+    }
+
     public static class Node<T> {
         private Node prev;
         private T value;
