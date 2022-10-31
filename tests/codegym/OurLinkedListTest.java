@@ -91,5 +91,20 @@ class OurLinkedListTest {
         // test that null is returned if the list is empty
         assertNull(list2.peekLast());
     }
+
+    @Test
+    void testRemoveLast() {
+        OurLinkedList<String> stringList = new OurLinkedList<>();
+        stringList.add("First");
+        stringList.add("Second");
+        stringList.add("Third");
+        stringList.add("Fourth");
+        stringList.add("Fifth");
+        String lastString = stringList.removeLast();
+        // Check that string extracted is indeed the last string in the array
+        assertEquals("Fifth", lastString);
+        // Check to see if calling the fifth location in a list returns an exception since it shouldn't exist.
+        assertThrows(Exception.class, () -> { stringList.get(5); });
+    }
 }
 

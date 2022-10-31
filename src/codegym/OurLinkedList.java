@@ -100,6 +100,15 @@ public class OurLinkedList<T> {
         private Node next;
     }
 
+
+    public T removeLast() {
+        Node node = new Node();
+        node = last.prev;
+        last = last.prev.prev;
+        last.next = null;
+        return (T)node.value;
+    }
+
     public T poll(){
         var r = first.next;
         first.next = r.next;
