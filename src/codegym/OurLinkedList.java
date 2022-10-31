@@ -123,12 +123,22 @@ public class OurLinkedList<T> {
         return (T)node.value;
     }
 
+    public int size() {
+        int count = 0;
+        Node currentElement = first.next;
+        while((currentElement) != null) {
+            count++;
+            currentElement = currentElement.next;
+        }
+        return --count;
+    }
+
     public <Type> Type[] toArray(Type[] a) {
         Node currentNode = first.next;
         Type[] arr = (Type[]) Array.newInstance(a.getClass().getComponentType(), this.size());
         int index = 0;
         while(currentNode.value != null) {
-            System.out.println(index + ": " + currentNode.value);
+//            System.out.println(index + ": " + currentNode.value);
             arr[index++] = (Type)currentNode.value;
             currentNode = currentNode.next;
         }
