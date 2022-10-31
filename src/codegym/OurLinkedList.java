@@ -24,7 +24,7 @@ public class OurLinkedList<T> {
         Node node = new Node();
         node.value = value;
         Node currentElement = first.next;
-        for(int i = 0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             currentElement = currentElement.next;
         }
         Node ref = currentElement.prev;
@@ -33,7 +33,6 @@ public class OurLinkedList<T> {
         node.prev = ref;
         node.next = currentElement;
     }
-
 
     public T get(int index) {
         Node currentElement = first.next;
@@ -59,39 +58,11 @@ public class OurLinkedList<T> {
         node.next = last;
     }
 
-    public T remove() {
-        Node nodeToRemove = first.next;
-        first.next = nodeToRemove.next;
-        nodeToRemove.next.prev = first;
-        return (T)nodeToRemove.value;
-    }
-
-
-
-
     public static class Node<T> {
         private Node prev;
         private T value;
         private Node next;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public T poll(){
         var r = first.next;
@@ -105,4 +76,14 @@ public class OurLinkedList<T> {
 //        return rv;
     }
 
+    // Retrieves and removes the head (first element) of this list.
+    public T remove() {
+        Node toBeRemoved = first.next;
+        first.next = toBeRemoved.next;
+        toBeRemoved.next.prev = first;
+
+        return (T)toBeRemoved.value;
+    }
+
 }
+
