@@ -96,6 +96,25 @@ public class OurLinkedList<T> {
         return value;
     }
 
+    public T set(int index, T value) {
+        Node node = new Node();
+        node.value = value;
+        Node currentElement = first.next;
+        for(int i = 0; i < index; i++) {
+            currentElement = currentElement.next;
+        }
+        Node oldNode = currentElement;
+//        currentElement.value = node;
+        node.prev = currentElement.prev;
+        node.next = currentElement.next;
+        if (currentElement.prev != null)
+            currentElement.prev.next = node;
+        if (currentElement.next != null)
+            currentElement.next.prev = node;
+        return (T) oldNode;
+    }
+
+
     public static class Node<T> {
         private Node prev;
         private T value;
@@ -151,6 +170,41 @@ public class OurLinkedList<T> {
         return (T)node.value;
     }
 
+
+    public int indexOf(T element) {
+        int index = 0;
+        Node current = first.next;
+
+        while(current != null) {
+            if(current.value == element) {
+                return index;
+
+            } else {
+                current = current.next;
+                index++;
+            }
+        }
+        return -1;
+    }
+
+
+    public boolean offer(T value){
+        try{
+            Node node = new Node();
+            node.value = value;
+            Node ref = last.prev;
+            ref.next = node;
+            last.prev = node;
+            node.prev = ref;
+            node.next = last;
+            return true;
+        }
+        catch(Exception ex){
+            return false;
+        }
+    }
+
+
     public int size() {
         int count = 0;
         Node currentElement = first.next;
@@ -186,7 +240,7 @@ public class OurLinkedList<T> {
     }
 
     public T poll(){
-        var r = first.next;
+        Node r = first.next;
         first.next = r.next;
         r.next.prev=first;
         return (T)r.value;
@@ -197,13 +251,26 @@ public class OurLinkedList<T> {
 //        return rv;
     }
 
+
     // Retrieves and removes the head (first element) of this list.
     public T remove() {
         Node toBeRemoved = first.next;
         first.next = toBeRemoved.next;
         toBeRemoved.next.prev = first;
 
-        return (T)toBeRemoved.value;
+        return (T) toBeRemoved.value;
+    }
+
+    //Tyler Hand addlast
+    public T addLast(T value){
+        Node node = new Node();
+        node.value = value;
+        Node ref = last.prev;
+        ref.next = node;
+        last.prev = node;
+        node.prev = ref;
+        node.next = last;
+        return (T)node.value;
     }
 
 }
