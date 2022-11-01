@@ -126,13 +126,13 @@ class OurLinkedListTest {
         list.add("pizza");
         list.add("chicken wings");
         list.add("french fries");    
-        list.remove("pizza");
-        list.remove("soda");
+        list.rith_remove("pizza");
+        list.rith_remove("soda");
         assertEquals("chicken wings",list.get(0));
         assertEquals("french fries",list.get(1));
 
         list.add("soda");
-        list.remove("french fries");
+        list.rith_remove("french fries");
         assertEquals("soda",list.get(1));
 
     }
