@@ -254,5 +254,18 @@ class OurLinkedListTest {
         assertThrows(NoSuchElementException.class, () -> list2.getLast());
     }
 
+    @Test
+    void clear() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        list.printAll();
+        list.clear();
+        list.printAll();
+//        assertTrue();
+
+    }
+
 }
 

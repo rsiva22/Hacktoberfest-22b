@@ -260,6 +260,10 @@ public class OurLinkedList<T> {
 //        return rv;
     }
 
+    public void clear() {
+        first.next = last;
+        last.prev = first;
+    }
 
     // Retrieves and removes the head (first element) of this list.
     public T remove() {
@@ -280,6 +284,7 @@ public class OurLinkedList<T> {
         node.prev = ref;
         node.next = last;
         return (T)node.value;
+
     }
 
 }
