@@ -287,4 +287,82 @@ public class OurLinkedList<T> {
 
     }
 
+    public Boolean removeLastOccurrence(T o) {
+
+        if (o == null) {
+
+            for (Node<T> x = last; x != null; x = x.prev) {
+                if (x.value == null) {
+
+                    Node<T> next = x.next;
+                    Node<T> prev = x.prev;
+
+                    if (prev == null) {
+
+                        first = next;
+
+                    } else {
+
+                        prev.next = next;
+                        x.prev = null;
+
+                    }
+
+                    if (next == null) {
+
+                        last = prev;
+
+                    } else {
+
+                        next.prev = prev;
+                        x.next = null;
+
+                    }
+
+                    x.value = null;
+
+                    return true;
+
+
+                }
+            }
+        }else{
+            for (Node<T> x = last; x != null; x = x.prev) {
+                if (o.equals(x.value)) {
+
+                    Node<T> next = x.next;
+                    Node<T> prev = x.prev;
+
+                    if (prev == null) {
+
+                        first = next;
+
+                    } else {
+
+                        prev.next = next;
+                        x.prev = null;
+
+                    }
+
+                    if (next == null) {
+
+                        last = prev;
+
+                    } else {
+
+                        next.prev = prev;
+                        x.next = null;
+
+                    }
+
+                    x.value = null;
+
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 }

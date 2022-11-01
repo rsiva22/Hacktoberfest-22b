@@ -255,6 +255,27 @@ class OurLinkedListTest {
     }
 
     @Test
+    public void GideonTestRemoveLastOccurrence() {
+
+        OurLinkedList<String> list = new OurLinkedList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("a");
+        list.add(null);
+        assertEquals(true,list.removeLastOccurrence("a"));
+        assertEquals(true,list.removeLastOccurrence(null));
+        assertFalse(list.removeLastOccurrence("c"));
+        OurLinkedList<Integer> listtwo = new OurLinkedList<Integer>();
+        listtwo.add(1);
+        listtwo.add(2);
+        listtwo.add(1);
+        listtwo.add(null);
+        assertEquals(true,listtwo.removeLastOccurrence(1));
+        assertEquals(true,list.removeLastOccurrence(null));
+        assertFalse(listtwo.removeLastOccurrence(3));
+    }
+
+    @Test    
     void clear() {
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("pizza");
