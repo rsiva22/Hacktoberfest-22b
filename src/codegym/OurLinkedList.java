@@ -1,5 +1,6 @@
 package codegym;
 
+import java.util.LinkedList;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -121,18 +122,40 @@ public class OurLinkedList<T> {
         private Node next;
     }
 
-    public void remove(T value) {
+    public T pollLast(){
+        Node remove = last.prev;
+        last.prev = remove.prev;
+        remove.prev.next = last;
+        return (T)remove.value;
+    }
+    
+    public static void main(String[] args) {
+        OurLinkedList<Integer> li = new OurLinkedList<Integer>();
+        li.add(1);
+        li.add(2);
+        li.add(3);
+        li.add(4);
+        li.printAll();
+
+        System.out.println(li.pollLast());
+        li.printAll();
+    }
+
+    public boolean rith_remove(T value) {
         Node currentNode = first.next;
+        boolean bool = false;
         while (currentNode.next != null) {
             if (currentNode.value.equals(value)) {
                 Node beforeNode = currentNode.prev;
                 Node afterNode = currentNode.next;
                 beforeNode.next = afterNode;
                 afterNode.prev = beforeNode;
+                bool = true;
                 break;
             }
             currentNode = currentNode.next;
         }
+        return bool;
     }
 
 
@@ -237,6 +260,10 @@ public class OurLinkedList<T> {
 //        return rv;
     }
 
+    public void clear() {
+        first.next = last;
+        last.prev = first;
+    }
 
     // Retrieves and removes the head (first element) of this list.
     public T remove() {
@@ -257,6 +284,7 @@ public class OurLinkedList<T> {
         node.prev = ref;
         node.next = last;
         return (T)node.value;
+
     }
 
     public Boolean removeLastOccurrence(T o) {
