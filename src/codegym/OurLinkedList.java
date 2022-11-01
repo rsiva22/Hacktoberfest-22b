@@ -121,18 +121,21 @@ public class OurLinkedList<T> {
         private Node next;
     }
 
-    public void remove(T value) {
+    public boolean rith_remove(T value) {
         Node currentNode = first.next;
+        boolean bool = false;
         while (currentNode.next != null) {
             if (currentNode.value.equals(value)) {
                 Node beforeNode = currentNode.prev;
                 Node afterNode = currentNode.next;
                 beforeNode.next = afterNode;
                 afterNode.prev = beforeNode;
+                bool = true;
                 break;
             }
             currentNode = currentNode.next;
         }
+        return bool;
     }
 
 
