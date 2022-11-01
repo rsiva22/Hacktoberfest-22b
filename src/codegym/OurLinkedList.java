@@ -1,5 +1,6 @@
 package codegym;
 
+import java.util.LinkedList;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -119,6 +120,25 @@ public class OurLinkedList<T> {
         private Node prev;
         private T value;
         private Node next;
+    }
+
+    public T pollLast(){
+        Node remove = last.prev;
+        last.prev = remove.prev;
+        remove.prev.next = last;
+        return (T)remove.value;
+    }
+    
+    public static void main(String[] args) {
+        OurLinkedList<Integer> li = new OurLinkedList<Integer>();
+        li.add(1);
+        li.add(2);
+        li.add(3);
+        li.add(4);
+        li.printAll();
+
+        System.out.println(li.pollLast());
+        li.printAll();
     }
 
     public boolean rith_remove(T value) {

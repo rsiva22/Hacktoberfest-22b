@@ -105,6 +105,17 @@ class OurLinkedListTest {
     }
 
     @Test
+    void pollLast(){
+    OurLinkedList<Integer> li = new OurLinkedList<Integer>();
+    li.add(1);
+    li.add(2);
+    li.add(3);
+    li.add(4);
+    assertEquals(4, li.pollLast());
+    assertEquals(null, li.get(3));
+    }
+
+    @Test
     void hoang_Test_set() {
         OurLinkedList<String> list = new OurLinkedList<>();
         list.add("pizza");
