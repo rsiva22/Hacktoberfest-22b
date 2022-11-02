@@ -52,6 +52,17 @@ class OurLinkedListTest {
         list.add("french fries");
         assertEquals(list.poll(),"pizza");
     }
+    @Test
+    //Tyler Hand
+    void addLast() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");
+        assertEquals("pizza", list.get(0));
+        assertEquals("chicken wings", list.get(1));
+        assertEquals("french fries", list.get(2));
+    }
 
     @Test
     void testRemove() {
@@ -91,6 +102,22 @@ class OurLinkedListTest {
         assertEquals(firstTime, datesArray[0]);
         assertEquals(secondTime, datesArray[1]);
         assertEquals(thirdTime, datesArray[2]);
+    }
+
+    @Test
+    void hoang_Test_set() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("pizza");
+        list.add("chicken wings");
+        list.add("french fries");  
+        list.set(1, "cookies");
+        assertEquals("cookies", list.get(1));
+        list.add("candy");
+        list.add("book");
+        list.set(4, "banana");
+        list.set(1, "apple");
+        assertEquals("banana", list.get(4));
+        assertEquals("apple", list.get(1));
     }
 
     @Test
@@ -154,6 +181,41 @@ class OurLinkedListTest {
     }
 
     @Test
+    void john_TestOffer(){
+        OurLinkedList<Integer> list = new OurLinkedList<>();
+        boolean test1 = list.offer(4);
+        boolean test2 = list.offer(3);
+        boolean test3 = list.offer(100000);
+        // Test returns
+        assertTrue(test1);
+        assertTrue(test2);
+        assertTrue(test3);
+        // Test placements
+        assertEquals(4,list.get(0));
+        assertEquals(3,list.get(1));
+        assertEquals(100000, list.get(2));
+
+    }
+
+    @Test
+    void indexOf() {
+        OurLinkedList<String> list = new OurLinkedList<>();
+        list.add("red");
+        list.add("orange");
+        list.add("yellow");
+
+        int itemIndex1 = list.indexOf("red");
+        int itemIndex2 = list.indexOf("purple");
+        int itemIndex3 = list.indexOf("yellow");
+        int itemIndex4 = list.indexOf("orange");
+
+        assertEquals(0, itemIndex1);
+        assertEquals(2, itemIndex3);
+        assertEquals(-1, itemIndex2);
+        assertEquals(1, itemIndex4);
+    }
+
+    @Test
     void testRemoveLast() {
         OurLinkedList<String> stringList = new OurLinkedList<>();
         stringList.add("First");
@@ -180,6 +242,6 @@ class OurLinkedListTest {
         OurLinkedList<String> list2 = new OurLinkedList<>();
         assertThrows(NoSuchElementException.class, () -> list2.getLast());
     }
-    
+
 }
 
